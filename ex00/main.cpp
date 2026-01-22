@@ -6,7 +6,7 @@
 /*   By: dasimoes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 20:26:21 by dasimoes          #+#    #+#             */
-/*   Updated: 2026/01/17 20:55:06 by dasimoes         ###   ########.fr       */
+/*   Updated: 2026/01/22 16:41:37 by dasimoes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,12 @@ int	main(int ac, char **av)
 	{
 		ClapTrap clappy( "clappy" );
 		ClapTrap flappy( "flappy" );
+		ClapTrap cloneFlappy( flappy );
 		ClapTrap victim( "victim" );
 		ClapTrap killer( "killer" );
+		ClapTrap cloneTheClone;
 		
+		cloneTheClone = cloneFlappy;
 		for (int i = 0; i < 4; i++)
 			clappy.attack( "flappy" );
 		for (int j = 0; j < 4; j++)

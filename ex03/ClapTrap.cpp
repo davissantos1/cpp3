@@ -6,7 +6,7 @@
 /*   By: dasimoes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 17:42:15 by dasimoes          #+#    #+#             */
-/*   Updated: 2026/01/22 17:23:15 by dasimoes         ###   ########.fr       */
+/*   Updated: 2026/01/17 20:47:03 by dasimoes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,9 @@ ClapTrap::ClapTrap( const std::string& name ):
 
 ClapTrap::ClapTrap( const ClapTrap& other )
 {
-	std::cout	<< "ClapTrap copy constructor called"
+	std::cout	<< "ClapTrap copy constructor called for "
+				<< other._name
 				<< std::endl;
-
-	this->_name = other._name;
-	this->_hitPoints = other._hitPoints;
-	this->_energyPoints = other._energyPoints;
-	this->_attackDamage = other._attackDamage;
 }
 
 ClapTrap::~ClapTrap()
@@ -45,17 +41,9 @@ ClapTrap::~ClapTrap()
 
 ClapTrap& ClapTrap::operator=( const ClapTrap& other )
 {
-	std::cout	<< "ClapTrap assignment operator called"
+	std::cout	<< "ClapTrap assignment operator called for "
+				<< other._name
 				<< std::endl;
-
-	if (this != &other)
-	{
-		this->_name = other._name;
-		this->_hitPoints = other._hitPoints;
-		this->_energyPoints = other._energyPoints;
-		this->_attackDamage = other._attackDamage;
-	}
-
 	return (*this);
 }
 
@@ -71,10 +59,8 @@ void		ClapTrap::attack(const std::string& target)
 	}
 	else
 	{
-		std::string message = (this->_energyPoints > 0) ? "hit" : "energy";
-
 		std::cout	<< "ClapTrap " << this->_name
-					<< " has no " << message << " points!" 
+					<< " has no energy points, try again! " 
 					<< std::endl;
 	}
 }
@@ -103,10 +89,8 @@ void		ClapTrap::beRepaired(unsigned int amount)
 	}
 	else
 	{
-		std::string message = (this->_energyPoints > 0) ? "hit" : "energy";
-
 		std::cout	<< "ClapTrap " << this->_name
-					<< " has no " << message << " points!" 
+					<< " has no energy points, try again! " 
 					<< std::endl;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: dasimoes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 20:26:21 by dasimoes          #+#    #+#             */
-/*   Updated: 2026/01/21 20:24:18 by dasimoes         ###   ########.fr       */
+/*   Updated: 2026/01/22 17:39:10 by dasimoes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,10 @@ int	main(int ac, char **av)
 		ScavTrap scav( "scav" );
 		ClapTrap clappy( "clappy" );
 		FragTrap frag( "frag" );
+		FragTrap clone( frag );
+		FragTrap test;
+	
+		test = clone;
 
 		frag.attack( "scav" );
 		scav.takeDamage( 30 );

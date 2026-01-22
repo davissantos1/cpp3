@@ -6,7 +6,7 @@
 /*   By: dasimoes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 21:00:41 by dasimoes          #+#    #+#             */
-/*   Updated: 2026/01/22 17:30:12 by dasimoes         ###   ########.fr       */
+/*   Updated: 2026/01/21 20:26:50 by dasimoes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ class	FragTrap: public ClapTrap
 	public:
 		FragTrap();
 		FragTrap( const std::string& name );
-		FragTrap( const FragTrap& other );
-		FragTrap&	operator=( const FragTrap& other );
 		~FragTrap();
 		void	attack( const std::string& target );
 		void	highFivesGuys(void);

@@ -6,7 +6,7 @@
 /*   By: dasimoes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 17:36:22 by dasimoes          #+#    #+#             */
-/*   Updated: 2026/01/22 16:52:40 by dasimoes         ###   ########.fr       */
+/*   Updated: 2026/01/21 18:42:21 by dasimoes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class	ClapTrap
 {
-	private:
+	protected:
 		std::string	_name;
 		int			_hitPoints;
 		int			_energyPoints;

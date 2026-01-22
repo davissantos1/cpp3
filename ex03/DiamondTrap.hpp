@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dasimoes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 21:00:41 by dasimoes          #+#    #+#             */
-/*   Updated: 2026/01/22 17:30:12 by dasimoes         ###   ########.fr       */
+/*   Updated: 2026/01/22 16:32:46 by dasimoes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef DIAMONDTRAP_HPP
+# define DIAMONDTRAP_HPP
 
 # include "ClapTrap.hpp"
 
-class	FragTrap: public ClapTrap
+class	DiamondTrap: public ScavTrap, public FragTrap
 {
+	private:
+		std::string	_name;
 	public:
-		FragTrap();
-		FragTrap( const std::string& name );
-		FragTrap( const FragTrap& other );
-		FragTrap&	operator=( const FragTrap& other );
-		~FragTrap();
-		void	attack( const std::string& target );
-		void	highFivesGuys(void);
+		DiamondTrap();
+		DiamondTrap( const std::string& name );
+		DiamondTrap&	operator=( const
+		~DiamondTrap();
+		using ScavTrap::attack;
 };
 
 #endif
