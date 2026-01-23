@@ -6,7 +6,7 @@
 /*   By: dasimoes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 20:26:21 by dasimoes          #+#    #+#             */
-/*   Updated: 2026/01/22 17:39:10 by dasimoes         ###   ########.fr       */
+/*   Updated: 2026/01/23 14:59:01 by dasimoes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int ac, char **av)
 	if (ac != 1)
 	{
 		std::cout	<< "Wrong usage, please type with no arguments:\n"
-					<< "./scavTrap" 
+					<< "./fragTrap" 
 					<< std::endl;
 		return (1);
 	}
