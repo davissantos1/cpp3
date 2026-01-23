@@ -6,12 +6,11 @@
 /*   By: dasimoes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 20:26:21 by dasimoes          #+#    #+#             */
-/*   Updated: 2026/01/21 20:24:18 by dasimoes         ###   ########.fr       */
+/*   Updated: 2026/01/22 20:36:50 by dasimoes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int	main(int ac, char **av)
 {
@@ -25,9 +24,19 @@ int	main(int ac, char **av)
 	}
 	else
 	{
+		DiamondTrap diamond( "diamond" );
 		ScavTrap scav( "scav" );
 		ClapTrap clappy( "clappy" );
 		FragTrap frag( "frag" );
+		DiamondTrap clone( diamond );
+		DiamondTrap test;
+	
+		test = clone;
+
+		diamond.whoAmI();
+		diamond.attack( "clappy" );
+		diamond.highFivesGuys();
+		diamond.guardGate();
 
 		frag.attack( "scav" );
 		scav.takeDamage( 30 );

@@ -6,7 +6,7 @@
 /*   By: dasimoes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 17:43:52 by dasimoes          #+#    #+#             */
-/*   Updated: 2026/01/21 18:48:12 by dasimoes         ###   ########.fr       */
+/*   Updated: 2026/01/22 17:26:57 by dasimoes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,41 @@ ScavTrap::ScavTrap( const std::string& name ) : ClapTrap( name )
 	this->_energyPoints = 50;
 	this->_attackDamage = 20;
 
-	std::cout	<< "ScavTrap constructor called for " 
+	std::cout	<< "ScavTrap name constructor called for " 
 				<< this->_name
 				<< std::endl;
 }
 
+ScavTrap&	ScavTrap::operator=( const ScavTrap& other )
+{
+	std::cout	<< "ScavTrap assignment operator called" 
+				<< std::endl;
+	
+	if (this != &other)
+	{
+		this->_name = other._name;
+		this->_hitPoints = other._hitPoints;
+		this->_energyPoints = other._energyPoints;
+		this->_attackDamage = other._attackDamage;
+	}
+
+	return (*this);
+}
+
+ScavTrap::ScavTrap( const ScavTrap& other )
+{
+	std::cout	<< "ScavTrap copy constructor called" 
+				<< std::endl;
+
+	this->_name = other._name;
+	this->_hitPoints = other._hitPoints;
+	this->_energyPoints = other._energyPoints;
+	this->_attackDamage = other._attackDamage;
+}
+
 ScavTrap::~ScavTrap()
 {
-	std::cout	<< "ScavTrap destructor called for " 
+	std::cout	<< "ScavTrap default destructor called for " 
 				<< this->_name
 				<< std::endl;
 }
@@ -44,8 +71,10 @@ void		ScavTrap::attack(const std::string& target)
 	}
 	else
 	{
+		std::string message = (this->_energyPoints > 0) ? "hit" : "energy";
+
 		std::cout	<< "ScavTrap " << this->_name
-					<< " has no energy points, try again! " 
+					<< " has no " << message << "points!"
 					<< std::endl;
 	}
 }
@@ -55,5 +84,4 @@ void		ScavTrap::guardGate()
 	std::cout	<< "ScavTrap " << this->_name
 				<< " is in Gate keeper mode!" 
 				<< std::endl;
-
 }

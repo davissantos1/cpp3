@@ -6,14 +6,15 @@
 /*   By: dasimoes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 21:00:41 by dasimoes          #+#    #+#             */
-/*   Updated: 2026/01/22 16:32:46 by dasimoes         ###   ########.fr       */
+/*   Updated: 2026/01/22 18:11:09 by dasimoes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DIAMONDTRAP_HPP
 # define DIAMONDTRAP_HPP
 
-# include "ClapTrap.hpp"
+# include "FragTrap.hpp"
+# include "ScavTrap.hpp"
 
 class	DiamondTrap: public ScavTrap, public FragTrap
 {
@@ -22,9 +23,11 @@ class	DiamondTrap: public ScavTrap, public FragTrap
 	public:
 		DiamondTrap();
 		DiamondTrap( const std::string& name );
-		DiamondTrap&	operator=( const
+		DiamondTrap( const DiamondTrap& other );
+		DiamondTrap&	operator=( const DiamondTrap& other );
 		~DiamondTrap();
 		using ScavTrap::attack;
+		void	whoAmI();
 };
 
 #endif
