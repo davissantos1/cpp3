@@ -6,7 +6,7 @@
 /*   By: dasimoes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 17:43:52 by dasimoes          #+#    #+#             */
-/*   Updated: 2026/01/22 17:39:43 by dasimoes         ###   ########.fr       */
+/*   Updated: 2026/01/23 12:48:25 by dasimoes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ FragTrap::~FragTrap()
 				<< std::endl;
 }
 
-FragTrap::FragTrap( const FragTrap& other )
+FragTrap::FragTrap( const FragTrap& other ) : ClapTrap( other )
 {
 	std::cout	<< "FragTrap copy constructor called" 
 				<< std::endl;
@@ -50,6 +50,7 @@ FragTrap&	FragTrap::operator=( const FragTrap& other )
 	
 	if (this != &other)
 	{
+		ClapTrap::operator=( other );
 		this->_name = other._name;
 		this->_hitPoints = other._hitPoints;
 		this->_energyPoints = other._energyPoints;

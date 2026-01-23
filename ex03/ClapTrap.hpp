@@ -6,7 +6,7 @@
 /*   By: dasimoes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 17:36:22 by dasimoes          #+#    #+#             */
-/*   Updated: 2026/01/22 17:24:57 by dasimoes         ###   ########.fr       */
+/*   Updated: 2026/01/23 13:19:45 by dasimoes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ class	ClapTrap
 		ClapTrap();
 		ClapTrap( const std::string &name );
 		ClapTrap( const ClapTrap& other );
-		~ClapTrap();
+		virtual ~ClapTrap();
 		ClapTrap&	operator=( const ClapTrap& other );
-		void		attack(const std::string& target);
-		void		takeDamage(unsigned int amount);
-		void		beRepaired(unsigned int amount);
+		virtual void		attack(const std::string& target);
+		virtual void		takeDamage(unsigned int amount);
+		virtual void		beRepaired(unsigned int amount);
 };
 
 #endif

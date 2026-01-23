@@ -6,7 +6,7 @@
 /*   By: dasimoes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 21:00:41 by dasimoes          #+#    #+#             */
-/*   Updated: 2026/01/22 18:11:09 by dasimoes         ###   ########.fr       */
+/*   Updated: 2026/01/23 13:27:44 by dasimoes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class	DiamondTrap: public ScavTrap, public FragTrap
 		DiamondTrap( const DiamondTrap& other );
 		DiamondTrap&	operator=( const DiamondTrap& other );
 		~DiamondTrap();
-		using ScavTrap::attack;
+		void	attack( const std::string& target );
 		void	whoAmI();
 };
 

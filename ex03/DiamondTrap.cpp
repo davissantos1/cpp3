@@ -6,7 +6,7 @@
 /*   By: dasimoes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 17:43:52 by dasimoes          #+#    #+#             */
-/*   Updated: 2026/01/22 22:52:34 by dasimoes         ###   ########.fr       */
+/*   Updated: 2026/01/23 13:30:13 by dasimoes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,19 @@ DiamondTrap::DiamondTrap() {}
 DiamondTrap::DiamondTrap( const std::string& name ) : ClapTrap( name + "_clap_name" )
 {
 	this->_name = name;
-	this->_hitPoints = FragTrap::_hitPoints;
-	this->_energyPoints = ScavTrap::_energyPoints;
-	this->_attackDamage = FragTrap::_attackDamage;
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 30;
 
 	std::cout	<< "DiamondTrap constructor called for " 
 				<< this->_name
 				<< std::endl;
 }
 
-DiamondTrap::DiamondTrap( const DiamondTrap& other ) : ClapTrap( other._name + "_clap_name" )
+DiamondTrap::DiamondTrap( const DiamondTrap& other ) : 
+	ClapTrap( other._name + "_clap_name" ),
+	ScavTrap( other ),
+	FragTrap( other )
 {
 	std::cout	<< "DiamondTrap copy constructor called" 
 				<< std::endl;
@@ -45,6 +48,8 @@ DiamondTrap&	DiamondTrap::operator=( const DiamondTrap& other )
 	ClapTrap::_name = other._name + "_clap_name";
 	if (this != &other)
 	{
+		ScavTrap::operator=( other );
+		FragTrap::operator=( other );
 		this->_name = other._name;
 		this->_hitPoints = other._hitPoints;
 		this->_energyPoints = other._energyPoints;
@@ -59,6 +64,11 @@ DiamondTrap::~DiamondTrap()
 	std::cout	<< "DiamondTrap default destructor called for " 
 				<< this->_name
 				<< std::endl;
+}
+
+void	DiamondTrap::attack( const std::string& target )
+{
+	ScavTrap::attack(target);
 }
 
 void	DiamondTrap::whoAmI()

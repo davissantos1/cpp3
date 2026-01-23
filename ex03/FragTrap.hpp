@@ -6,7 +6,7 @@
 /*   By: dasimoes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 21:00:41 by dasimoes          #+#    #+#             */
-/*   Updated: 2026/01/22 19:29:09 by dasimoes         ###   ########.fr       */
+/*   Updated: 2026/01/23 13:24:36 by dasimoes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ class	FragTrap: virtual public ClapTrap
 		FragTrap( const std::string& name );
 		FragTrap( const FragTrap& other );
 		FragTrap&	operator=( const FragTrap& other );
-		~FragTrap();
-		void	attack( const std::string& target );
-		void	highFivesGuys(void);
+		virtual ~FragTrap();
+		virtual void	attack( const std::string& target );
+		virtual void	highFivesGuys(void);
 };
 
 #endif
